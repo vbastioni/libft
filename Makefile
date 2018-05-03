@@ -10,23 +10,25 @@ else ifeq ($(DEBUG),g3)
 endif
 
 OBJ_D:=obj
-INC_D:=\
--Iinc
+INC_D:=-Iinc
+SRC_D:=src
 
-include ft_astr/ft_astr.mk
-include ft_list/ft_list.mk
-include ft_printf/ft_printf.mk
-include ft_stdlib/ft_stdlib.mk
-include ft_stdio/ft_stdio.mk
-include ft_string/ft_string.mk
-include array/array.mk
-include qbuf/qbuf.mk
+include src/ft_astr/ft_astr.mk
+include src/ft_list/ft_list.mk
+include src/ft_printf/ft_printf.mk
+include src/ft_stdlib/ft_stdlib.mk
+include src/ft_stdio/ft_stdio.mk
+include src/ft_string/ft_string.mk
+include src/array/array.mk
+include src/qbuf/qbuf.mk
+
+VPATH_C:=$(addprefix $(SRC_D)/, $(PATH_C))
 
 ITEM:=$(OBJ:%.c=%.o)
 
 OBJ:=$(addprefix $(OBJ_D)/,$(ITEM))
 
-vpath %.c $(PATH_C)
+vpath %.c $(VPATH_C)
 vpath %.h inc
 
 all: $(NAME)
