@@ -13,10 +13,14 @@ OBJ_D:=obj
 INC_D:=\
 -Iinc
 
+include ft_astr/ft_astr.mk
+include ft_list/ft_list.mk
+include ft_printf/ft_printf.mk
 include ft_stdlib/ft_stdlib.mk
 include ft_stdio/ft_stdio.mk
 include ft_string/ft_string.mk
 include array/array.mk
+include qbuf/qbuf.mk
 
 ITEM:=$(OBJ:%.c=%.o)
 
