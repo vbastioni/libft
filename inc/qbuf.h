@@ -1,7 +1,7 @@
 #ifndef QBUF_H
 # define QBUF_H
 
-# include <stdlib.h>
+# include "ft_stdlib.h"
 # include "ft_string.h"
 
 typedef struct s_qbuf	t_qbuf;

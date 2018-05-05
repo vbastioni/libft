@@ -6,7 +6,7 @@ int				ft_vprintf(const char *format, va_list ap)
 
 	buf = fpf_buf_get();
 	buf->type = FPF_FD;
-	buf->out.fd = 1;
+	buf->out.fd = STDOUT_FILENO;
 	return (fpf_worker(format, ap));
 }
 
