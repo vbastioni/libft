@@ -29,4 +29,7 @@ void					qbuf_nuke(t_qbuf **buf);
 void					qbuf_printclose(t_qbuf **buf, int fd);
 int						qbuf_addl(t_qbuf *buf, long l);
 
+int                     qbuf_cmp(t_qbuf *lhs, t_qbuf *rhs);
+int                     qbuf_strcmp(t_qbuf *lhs, const char *rhs);
+
 #endif

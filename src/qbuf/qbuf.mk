@@ -1,4 +1,5 @@
 OBJ+=\
+qbuf_cmp.c\
 qbuf_dump.c\
 qbuf_insert.c\
 qbuf_lifecycle.c\
