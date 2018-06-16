@@ -1,10 +1,10 @@
-#include "qbuf.h"
+#include "ft_string.h"
 
-t_qbuf				*qbuf_new(size_t first)
+t_string				*string_new(size_t first)
 {
-	t_qbuf			*buf;
+	t_string			*buf;
 
-	if ((buf = (t_qbuf *)ft_memalloc(sizeof(t_qbuf))) == NULL)
+	if ((buf = (t_string *)ft_memalloc(sizeof(t_string))) == NULL)
 		return (NULL);
 	if ((buf->buffer = ft_strnew(first)) == NULL)
 	{
@@ -15,7 +15,7 @@ t_qbuf				*qbuf_new(size_t first)
 	return (buf);
 }
 
-char				*qbuf_del(t_qbuf **buf)
+char				*string_del(t_string **buf)
 {
 	char			*str;
 
@@ -27,13 +27,13 @@ char				*qbuf_del(t_qbuf **buf)
 	return (str);
 }
 
-void				qbuf_clear(t_qbuf *buf)
+void				string_clear(t_string *buf)
 {
 	ft_bzero(buf->buffer, buf->used);
 	buf->used = 0;
 }
 
-void				qbuf_nuke(t_qbuf **buf)
+void				string_nuke(t_string **buf)
 {
 	ft_strdel(&((*buf)->buffer));
 	ft_memdel((void **)buf);

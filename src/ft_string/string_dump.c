@@ -1,8 +1,8 @@
-#include "qbuf.h"
+#include "ft_string.h"
 
 #include <unistd.h>
 
-char				*qbuf_dump(t_qbuf *buf)
+char				*string_dump(t_string *buf)
 {
 	char			*ret;
 
@@ -12,8 +12,8 @@ char				*qbuf_dump(t_qbuf *buf)
 	return (ret);
 }
 
-void				qbuf_printclose(t_qbuf **buf, int fd)
+void				string_printclose(t_string **buf, int fd)
 {
 	write(fd, (*buf)->buffer, (*buf)->used);
-	qbuf_nuke(buf);
+	string_nuke(buf);
 }

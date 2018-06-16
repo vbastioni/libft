@@ -1,10 +1,10 @@
-#include "qbuf.h"
+#include "ft_string.h"
 
-int						qbuf_addc(t_qbuf *buf, char c)
+int						string_addc(t_string *buf, char c)
 {
 	if (buf->used + 1 == buf->size)
 	{
-		if (qbuf_grow(buf) == 0)
+		if (string_grow(buf) == 0)
 			return (0);
 	}
 	buf->buffer[buf->used] = c;
@@ -12,20 +12,20 @@ int						qbuf_addc(t_qbuf *buf, char c)
 	return (1);
 }
 
-int						qbuf_add(t_qbuf *buf, char *str)
+int						string_add(t_string *buf, char *str)
 {
 	if (str == NULL)
 		return (0);
-	return (qbuf_addn(buf, str, ft_strlen(str)));
+	return (string_addn(buf, str, ft_strlen(str)));
 }
 
-int						qbuf_addl(t_qbuf *buf, long l)
+int						string_addl(t_string *buf, long l)
 {
 	char				lbuf[30];
 
     ft_bzero(lbuf, 30);
     ft_ltobuf(l, 10, 0, lbuf);
-	return (qbuf_add(buf, lbuf));
+	return (string_add(buf, lbuf));
 }
 
 static inline size_t	lnearest_pow(size_t n, size_t b)
@@ -35,7 +35,7 @@ static inline size_t	lnearest_pow(size_t n, size_t b)
 	return (b);
 }
 
-int						qbuf_addn(t_qbuf *buf, char *str, size_t n)
+int						string_addn(t_string *buf, char *str, size_t n)
 {
 	size_t				total;
 
@@ -48,7 +48,7 @@ int						qbuf_addn(t_qbuf *buf, char *str, size_t n)
 		buf->used = total;
 		return (1);
 	}
-	if (qbuf_grown(buf, lnearest_pow(total << 1, buf->size)) == 0)
+	if (string_grown(buf, lnearest_pow(total << 1, buf->size)) == 0)
 		return (0);
 	ft_strncat(buf->buffer, str, n);
 	buf->used = total;

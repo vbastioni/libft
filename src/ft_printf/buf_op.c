@@ -5,7 +5,7 @@ int					fpf_buf_addc(const char c)
 	t_buf			*buf;
 
 	buf = fpf_buf_get();
-	qbuf_addc(buf->buf, c);
+	string_addc(buf->buf, c);
 	return (1);
 }
 
@@ -16,10 +16,10 @@ int					fpf_buf_addfillers(int ws, size_t sz)
 	buf = fpf_buf_get();
 	while (sz > BIG_WS_SZ)
 	{
-		qbuf_addn(buf->buf, ws ? BIG_WS : BIG_00, BIG_WS_SZ);
+		string_addn(buf->buf, ws ? BIG_WS : BIG_00, BIG_WS_SZ);
 		sz -= BIG_WS_SZ;
 	}
-	qbuf_addn(buf->buf, ws ? BIG_WS : BIG_00, sz);
+	string_addn(buf->buf, ws ? BIG_WS : BIG_00, sz);
 	return (1);
 }
 
@@ -28,6 +28,6 @@ int					fpf_buf_add(const char *str, size_t n)
 	t_buf			*buf;
 
 	buf = fpf_buf_get();
-	qbuf_addn(buf->buf, (char *)str, n);
+	string_addn(buf->buf, (char *)str, n);
 	return (n);
 }
