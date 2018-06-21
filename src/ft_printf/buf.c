@@ -12,7 +12,7 @@ void				fpf_buf_init(t_buf *buf)
 	if (buf == NULL)
 		buf = fpf_buf_get();
 	if (buf->type != FPF_S)
-		buf->buf = qbuf_new(1 << 8);
+		buf->buf = string_new(1 << 8);
 	buf->init = 1;
 }
 

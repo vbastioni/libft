@@ -11,7 +11,7 @@
 # include <sys/types.h>
 
 # include "ft_stdlib.h"
-# include "qbuf.h"
+# include "ft_string.h"
 
 # define FT_PBSZ 2048
 # define FT_TMPBSZ 100
@@ -60,7 +60,7 @@ typedef union				u_output
 typedef struct				s_buf
 {
 	int						init;
-	t_qbuf					*buf;
+	t_string				*buf;
 	char					tmp_buf[FT_TMPBSZ];
 	enum e_outtype			type;
 	union u_output			out;

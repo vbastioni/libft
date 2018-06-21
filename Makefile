@@ -20,8 +20,8 @@ include src/ft_stdlib/ft_stdlib.mk
 include src/ft_stdio/ft_stdio.mk
 include src/ft_string/ft_string.mk
 include src/array/array.mk
-include src/qbuf/qbuf.mk
 include src/ft_hashset/ft_hashset.mk
+include src/ft_ctype/ft_ctype.mk
 
 VPATH_C:=$(addprefix $(SRC_D)/, $(PATH_C))
 

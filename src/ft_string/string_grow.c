@@ -1,11 +1,11 @@
-#include "qbuf.h"
+#include "ft_string.h"
 
-int					qbuf_grow(t_qbuf *buf)
+int					string_grow(t_string *buf)
 {
-	return (qbuf_grown(buf, buf->size * 2));
+	return (string_grown(buf, buf->size * 2));
 }
 
-int					qbuf_grown(t_qbuf *buf, size_t n)
+int					string_grown(t_string *buf, size_t n)
 {
 	char			*str;
 
