@@ -1,4 +1,5 @@
 OBJ+=\
+ft_ltobuf.c\
 ft_memmove.c\
 ft_strlen.c\
 ft_strcmp.c\
